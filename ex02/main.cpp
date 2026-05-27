@@ -1,7 +1,7 @@
 #include <iostream>
 #include <Array.hpp>
 
-#define MAX_VAL 750
+#define MAX_VAL 10
 int main(int, char **)
 {
     Array<int> numbers(MAX_VAL);
@@ -26,7 +26,12 @@ int main(int, char **)
             std::cerr << "didn't save the same value!!" << std::endl;
             return 1;
         }
+        else
+        {
+            std::cout << "value have been well copied" << std::endl;
+        }
     }
+
     try
     {
         numbers[-2] = 0;
@@ -47,6 +52,10 @@ int main(int, char **)
     for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();
+    }
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        std::cout << "number[" << i << "]" << " = " << numbers[i] << std::endl;
     }
     delete[] mirror; //
     return 0;
